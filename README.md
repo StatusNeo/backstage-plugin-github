@@ -1,7 +1,7 @@
 # GitHub Homepage Cards for Backstage Enterprise
 
-This plugin is contributed by Statusneo.
-<img src="https://raw.githubusercontent.com/StatusNeo/backstage-plugin-github/main/src/assets/statusneo.png"/>
+This plugin is contributed by Statusneo. <br/>
+<img src="https://raw.githubusercontent.com/StatusNeo/backstage-plugin-github/main/src/assets/statusneo.png"/> <br/>
 To read more about this plugin please read this [blog](https://statusneo.com/23468-2).
 
 # Setup
