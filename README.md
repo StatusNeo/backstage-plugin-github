@@ -13,7 +13,7 @@ Now in the below steps, I will assume you are already done with the provider.
 ## Integration Steps
 1. First Install the Github cards plugin by running this command from the root of the package.
 ```shell
-yarn add –cwd packages/app @statusneo/backstage-github-plugin
+yarn add –cwd packages/app @statusneo/backstage-plugin-github
 ```
 
 2. Import GithubPullRequestsCard, and GithubActionsCard from the installed package
