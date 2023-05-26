@@ -24,7 +24,9 @@ type Props = {
 
 export const SignInContent = ({ handleAuthClick }: Props) => {
   return (
+    // @ts-ignore
     <Box position="relative" height="100%" width="100%" minHeight={100}>
+      // @ts-ignore
       <Box
         height="100%"
         width="100%"
@@ -41,7 +43,7 @@ export const SignInContent = ({ handleAuthClick }: Props) => {
           onClick={handleAuthClick}
           size="large"
         >
-          Sign in
+          Sign In
         </Button>
       </Box>
     </Box>

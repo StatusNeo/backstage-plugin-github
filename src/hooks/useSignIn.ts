@@ -28,7 +28,7 @@ export const useSignIn = () => {
         optional,
         instantPopup: !optional,
       });
-      
+
       setSignedIn(!!token);
       setInitialized(true);
     },

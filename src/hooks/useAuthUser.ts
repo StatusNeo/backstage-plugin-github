@@ -12,10 +12,10 @@ export function useAuthUser(isSignedIn: boolean) {
     useQuery(['git-auth-user'], ()=>{
         return githubClient.getAuthenticatedUser()
     }, {
-        enabled: isSignedIn, 
+        enabled: isSignedIn,
         cacheTime: 20000,
         staleTime: 10000,
-        // refetchOnMount: false, 
+        // refetchOnMount: false,
         refetchOnWindowFocus: true,
         refetchInterval: 120000, // stops when window is not focused
         onSuccess: (data)=>{

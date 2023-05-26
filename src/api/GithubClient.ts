@@ -86,7 +86,7 @@ export class GithubClient implements GithubApi {
     return this.get<UserRepositoryApiResponse>(
       `/user/repos`,
       params,
-    );  
+    );
   }
 
 }

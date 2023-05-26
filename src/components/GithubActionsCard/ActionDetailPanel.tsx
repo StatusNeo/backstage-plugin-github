@@ -88,7 +88,7 @@ export function ActionDetailPanel({ rowData }: { rowData: WorkflowRun }) {
           <Tab label={job.name} id={job.id} value={job.id} />
         ))}
       </Tabs>
-      <Paper 
+      <Paper
       classes={{
         root: classes.timelineContainer
       }}

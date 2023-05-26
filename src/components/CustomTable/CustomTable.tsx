@@ -149,6 +149,7 @@ export function CustomTable<T extends object = {}>(props: CustomTableProps<T>) {
             />
           );
         },
+        // @ts-ignore
         Header: headerProps => <StyledMTableHeader {...headerProps} />,
       }}
       detailPanel={props.detailPanel}
