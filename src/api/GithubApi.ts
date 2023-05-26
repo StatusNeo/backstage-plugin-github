@@ -11,5 +11,5 @@ export interface GithubApi {
 }
 
 export const githubApiRef = createApiRef<GithubApi>({
-  id: 'plugin.github.service',
+  id: 'plugin.github.statusneo.service',
 });
