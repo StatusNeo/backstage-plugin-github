@@ -1,5 +1,5 @@
 import { GithubApi } from './GithubApi';
-import { OAuthApi, FetchApi } from '@backstage/core-plugin-api';
+import { OAuthApi, FetchApi, ConfigApi } from '@backstage/core-plugin-api';
 import { ResponseError } from '@backstage/errors';
 import {
   SearchApiFetchRequest,
@@ -17,10 +17,16 @@ import {
 export class GithubClient implements GithubApi {
   private readonly authApi: OAuthApi;
   private readonly fetchApi: FetchApi;
+  private readonly configApi: ConfigApi;
 
-  constructor(options: { authApi: OAuthApi; fetchApi: FetchApi }) {
+  constructor(options: {
+    authApi: OAuthApi;
+    fetchApi: FetchApi;
+    configApi: ConfigApi;
+  }) {
     this.authApi = options.authApi;
     this.fetchApi = options.fetchApi;
+    this.configApi = options.configApi;
   }
 
   private async get<T>(
@@ -28,9 +34,13 @@ export class GithubClient implements GithubApi {
     params: { [key in string]: any } = {},
   ): Promise<T> {
     const query = new URLSearchParams(params);
+
+    const baseUrl: string =
+      this.configApi.get('gh-plugin.url') || 'https://api.github.com/';
+
     const url = new URL(
       `${path}?${query.toString().replaceAll('%2B', '+')}`,
-      'https://api.github.com/',
+      baseUrl,
     );
 
     const token = await this.authApi.getAccessToken();
@@ -82,11 +92,9 @@ export class GithubClient implements GithubApi {
     );
   }
 
-  public getAuthenticatedUserReposByType (params: UserRepositoryApiRequest): Promise<UserRepositoryApiResponse> {
-    return this.get<UserRepositoryApiResponse>(
-      `/user/repos`,
-      params,
-    );
+  public getAuthenticatedUserReposByType(
+    params: UserRepositoryApiRequest,
+  ): Promise<UserRepositoryApiResponse> {
+    return this.get<UserRepositoryApiResponse>(`/user/repos`, params);
   }
-
 }

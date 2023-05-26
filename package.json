@@ -78,5 +78,21 @@
     "backstage",
     "statusneo",
     "github"
-  ]
+  ],
+  "configSchema": {
+    "$schema": "https://backstage.io/schema/config-v1",
+    "title": "@statusneo/backstage-plugin-github",
+    "type": "object",
+    "properties": {
+      "gh-plugin": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "visibility": "frontend"
+          }
+        }
+      }
+    }
+  }
 }

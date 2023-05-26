@@ -4,15 +4,16 @@ import {
   fetchApiRef,
   createApiFactory,
   createComponentExtension,
+  configApiRef
 } from '@backstage/core-plugin-api';
 import { githubApiRef, GithubClient } from './api';
 
 export const backstageGithubPlugin = createPlugin({
-  id: 'backstage-plugin-github',
+  id: 'backstage-statusneo-plugin-github',
   apis: [
     createApiFactory({
       api: githubApiRef,
-      deps: { authApi: githubAuthApiRef, fetchApi: fetchApiRef },
+      deps: { authApi: githubAuthApiRef, fetchApi: fetchApiRef, configApi: configApiRef },
       factory(deps) {
         return new GithubClient(deps);
       },
