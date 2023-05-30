@@ -36,7 +36,6 @@ export const SignInContent = ({ handleAuthClick }: Props) => {
         left={0}
         top={0}
       >
-        Abhay soni
         <Button
           variant="contained"
           color="primary"
