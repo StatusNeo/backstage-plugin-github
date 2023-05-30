@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/StatusNeo/backstage-plugin-github"
   },
   "backstage": {
     "role": "frontend-plugin"
@@ -36,14 +36,15 @@
     "@backstage/errors": "^1.1.4",
     "@backstage/theme": "^0.2.16",
     "@material-table/core": "v3.1.0",
-    "@material-ui/core": "^4.9.13",
+    "@material-ui/core": "^4.12.2",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.57",
     "@tanstack/react-query": "^4.22.0",
     "react-use": "^17.2.4"
   },
   "peerDependencies": {
-    "react": "^16.13.1 || ^17.0.0"
+    "react": "^16.13.1 || ^17.0.0",
+    "react-dom": "^16.13.1 || ^17.0.0"
   },
   "devDependencies": {
     "@backstage/cli": "^0.22.1",

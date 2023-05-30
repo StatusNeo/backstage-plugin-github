@@ -21,12 +21,11 @@ type Props = {
   handleAuthClick: React.MouseEventHandler<HTMLElement>;
 };
 
-
 export const SignInContent = ({ handleAuthClick }: Props) => {
   return (
     // @ts-ignore
     <Box position="relative" height="100%" width="100%" minHeight={100}>
-      // @ts-ignore
+      {/* @ts-ignore */}
       <Box
         height="100%"
         width="100%"
@@ -37,6 +36,7 @@ export const SignInContent = ({ handleAuthClick }: Props) => {
         left={0}
         top={0}
       >
+        Abhay soni
         <Button
           variant="contained"
           color="primary"
