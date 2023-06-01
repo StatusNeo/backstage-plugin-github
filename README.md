@@ -19,6 +19,21 @@ Now in the below steps, I will assume you are already done with the provider.
 ```shell
 yarn add –cwd packages/app @statusneo/backstage-plugin-github
 ```
+2. add this to the app/src/apis.ts
+
+```javascript
+  import { githubApiRef, GithubClient as StatusNeoGithubClient } from '@statusneo/backstage-plugin-github';
+  
+  // ...
+  createApiFactory({
+    api: githubApiRef,
+    deps: { authApi: githubAuthApiRef, fetchApi: fetchApiRef, configApi: configApiRef },
+    factory(deps) {
+      return new StatusNeoGithubClient(deps);
+    },
+  }),
+  // ...
+```
 
 2. Import `GithubPullRequestsCard`, and `GithubActionsCard` from the installed package.
 
