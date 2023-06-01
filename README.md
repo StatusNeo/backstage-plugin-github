@@ -35,9 +35,9 @@ yarn add –cwd packages/app @statusneo/backstage-plugin-github
   // ...
 ```
 
-2. Import `GithubPullRequestsCard`, and `GithubActionsCard` from the installed package.
+3. Import `GithubPullRequestsCard`, and `GithubActionsCard` from the installed package.
 
-3. You can then use these components at the backstage frontend wherever you need.
+4. You can then use these components at the backstage frontend wherever you need.
 
 ```javascript
 import { GithubPullRequestsCard, GithubActionsCard } from '@statusneo/backstage-plugin-github';
@@ -52,7 +52,7 @@ import { GithubPullRequestsCard, GithubActionsCard } from '@statusneo/backstage-
 // ...
 ```
 
-4. If you are using a GitHub enterprise edition, you can pass your instance url through app-config.yml
+5. If you are using a GitHub enterprise edition, you can pass your instance url through app-config.yml
 
 ```yaml
 
