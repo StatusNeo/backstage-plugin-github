@@ -19,6 +19,21 @@ Now in the below steps, I will assume you are already done with the provider.
 ```shell
 yarn add –cwd packages/app @statusneo/backstage-plugin-github
 ```
+2. add this to the app/src/apis.ts
+
+```javascript
+  import { githubApiRef, GithubClient as StatusNeoGithubClient } from '@statusneo/backstage-plugin-github';
+  
+  // ...
+  createApiFactory({
+    api: githubApiRef,
+    deps: { authApi: githubAuthApiRef, fetchApi: fetchApiRef, configApi: configApiRef },
+    factory(deps) {
+      return new StatusNeoGithubClient(deps);
+    },
+  }),
+  // ...
+```
 
 2. Import `GithubPullRequestsCard`, and `GithubActionsCard` from the installed package.
 
@@ -35,6 +50,15 @@ import { GithubPullRequestsCard, GithubActionsCard } from '@statusneo/backstage-
                 <GithubPullRequestsCard />
               </Grid>
 // ...
+```
+
+4. If you are using a GitHub enterprise edition, you can pass your instance url through app-config.yml
+
+```yaml
+
+gh-plugin:
+  url: ${GITHUB_ENTERPRISE_URL}
+
 ```
 
 Now you are ready to use this Backstage GitHub plugin to make your software management and development cycle a little more hassle-free.
