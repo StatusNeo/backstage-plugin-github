@@ -37,4 +37,13 @@ import { GithubPullRequestsCard, GithubActionsCard } from '@statusneo/backstage-
 // ...
 ```
 
+4. If you are using a GitHub enterprise edition, you can pass your instance url through app-config.yml
+
+```yaml
+
+gh-plugin:
+  url: ${GITHUB_ENTERPRISE_URL}
+
+```
+
 Now you are ready to use this Backstage GitHub plugin to make your software management and development cycle a little more hassle-free.
