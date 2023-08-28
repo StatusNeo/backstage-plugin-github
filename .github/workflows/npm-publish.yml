@@ -19,5 +19,6 @@ jobs:
           yarn install
           yarn tsc
           yarn build
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
