@@ -23,7 +23,7 @@ yarn add –cwd packages/app @statusneo/backstage-plugin-github
 
 ```javascript
   import { githubApiRef, GithubClient as StatusNeoGithubClient } from '@statusneo/backstage-plugin-github';
-  
+
   // ...
   createApiFactory({
     api: githubApiRef,
