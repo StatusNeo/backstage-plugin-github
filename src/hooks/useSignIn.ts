@@ -24,7 +24,7 @@ export const useSignIn = () => {
 
   const signIn = useCallback(
     async (optional = false) => {
-      const token = await authApi.getAccessToken('read', {
+      const token = await authApi.getAccessToken('repo', {
         optional,
         instantPopup: !optional,
       });
